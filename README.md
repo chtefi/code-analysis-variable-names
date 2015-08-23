@@ -78,3 +78,8 @@ $ app jquery.js --top 10 --no-summary
 11 hooks
 11 index
 ```
+
+## Limitations
+
+It doesn't work with JSX syntax, nor with `static propTypes = {}` syntax used in
+ES6 classes.
