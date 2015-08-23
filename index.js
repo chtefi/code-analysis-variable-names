@@ -6,11 +6,11 @@ import { simple as walk } from './node_modules/acorn/dist/walk.js';
 const argv = minimist(process.argv.slice(2));
 const withFunctionParams = argv['params'] === false ? false : true;
 const top = argv['top'] !== undefined ? argv['top'] : 30;
-const file = argv['file'];
+const file = argv['_'][0];
 const summary = argv['summary'] === false ? false : true;
 
 if (!file) {
-  console.error(`Please pass a js file to parse : --file [filename.js]`);
+  console.error(`Please pass a js file to parse : cavn [filename.js]`);
   process.exit(-1);
 }
 

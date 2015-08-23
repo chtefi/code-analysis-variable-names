@@ -1,6 +1,6 @@
 {
   "name": "code-analysis-variable-names",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Parse a given javascript source using `acorn` and outputs the frequency of variable/parameters names used in the source.",
   "main": "index.js",
   "bin": {

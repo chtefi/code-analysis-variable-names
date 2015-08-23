@@ -10,14 +10,15 @@ variable/parameters names used in the source. (it can parse ES6/ES2015 sources)
 You can install it globally or locally, globally being the easiest way to use it:
 ```
 npm i -g code-analysis-variable-names
-cavn --file ./index.js
+cavn index.js
 ```
 
 ## Options
 
 It has some options to adjust the output :
 
-- `--file ./dist/app.js` [mandatory] : which file to parse
+- `app.js` : which file to parse
+ - mandatory
 - `no-top` or `--top 10` : only display the top 10 of the most used or everything
  - default: `--top 30`
 - `no-summary` : don't display the summary in the output
@@ -27,8 +28,10 @@ It has some options to adjust the output :
 
 ## Output
 
+For instance, here is the output for `react.js` :
+
 ```shell
-$ app --file ./react.js --top 10
+$ app react.js --top 10
 # Total: 2126
 # Total Distinct: 884
 # Top 10:
@@ -44,8 +47,10 @@ $ app --file ./react.js --top 10
 23 propName
 ```
 
+On a minified file, that's not very useful:
+
 ```shell
-$ app --file ./react.min.js --top 10 --no-summary
+$ app react.min.js --top 10 --no-summary
 258 e
 214 t
 191 n
@@ -58,8 +63,10 @@ $ app --file ./react.min.js --top 10 --no-summary
 65 l
 ```
 
+jQuery likes loops :
+
 ```
-$ app --file .\jquery.js --top 10 --no-summary
+$ app jquery.js --top 10 --no-summary
 68 i
 36 elem
 20 ret
@@ -71,8 +78,3 @@ $ app --file .\jquery.js --top 10 --no-summary
 11 hooks
 11 index
 ```
-
-## Note
-
-It's written in ES2015 with some features nodejs does not handle yet (import).
-So basically, you need `babel-node` to run it.
