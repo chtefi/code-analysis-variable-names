@@ -5,6 +5,14 @@
 Parse a given javascript source using `acorn` and outputs the frequency of
 variable/parameters names used in the source. (it can parse ES6/ES2015 sources)
 
+## How to install
+
+You can install it globally or locally, globally being the easiest way to use it:
+```
+npm i -g code-analysis-variable-names
+cavn --file ./index.js
+```
+
 ## Options
 
 It has some options to adjust the output :
